@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini Aventador SVJ</title>
+    <style>
+        @font-face{
+            font-family: 'Le chant des Albatros';
+            src: url("Le chant des Albatros.ttf") format('truetype');
+        }
+
+        body {
+            background-color: #000;
+            background-image: linear-gradient(to right, rgb(44, 0, 0), rgb(0, 0, 0));
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1c1c1c;
+            border: 2px solid #ff004f;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(255, 0, 100, 0.5);
+            text-align: center;
+           
+        }
+
+        h1{
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Le chant des Albatros';
+            font-size: 80px;
+        }
+        h2 {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Le chant des Albatros';
+            font-size: 64px;
+        }
+
+        h3 {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Le chant des Albatros';
+            font-size: 64px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 60%;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            margin-bottom: 50px;
+            transition: transform 0.4s ease;
+            transform: scale(1.05);
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 90%;
+            border: 3px solid #ff001e;
+            border-radius: 15px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 0 30px rgba(255, 0, 100, 0.5);
+        }
+
+        .carousel img {
+            width: 100%;
+            display: none;
+            border-radius: 5px;
+            
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel .prev, .carousel .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 18px;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            user-select: none;
+        }
+
+        .carousel .prev {
+            left: 10px;
+        }
+
+        .carousel .next {
+            right: 10px;
+        }
+
+        .carousel .prev:hover, .carousel .next:hover {
+            background-color: rgba(255, 0, 0, 0.7);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            color: whitesmoke;
+            margin-bottom: 5px;
+            font-size: xx-large;
+        }
+
+        a {
+            color: #ff0000;
+            text-decoration: none;
+            font-size: 28px;
+            font-weight: bold;
+            border: 2px solid #ff0000;
+            padding: 12px 30px;
+            border-radius: 8px;
+            transition: 0.4s;
+        }
+
+        a:hover {
+            background-color: #ff0000;
+            color: #fff;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>LOS SANTOS CUSTOMS</h1>
+
+    <div class="car">
+        <h3>Lamborghini Aventador SVJ</h3>
+        <div class="carousel">
+            <img src="lamborghini aventador svj 1.jpg" alt="Koenigsegg" class="active">
+
+            <img src="Lamborghini-Aventador-SVJ-2.jpg" alt="">
+
+            <img src="Lamborghini-Aventador-SVJ-3.jpg" alt="Zentorno modificado 2">
+
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+
+        <ul>
+            <li>Ano: 2022</li>
+            <li>Motor: v12</li>
+            <li>Ar: 6.5</li>
+            <li>Velocidade Máxima: 350 km/h</li>
+            <li>Torque: 73,4 kgfm</li>
+            <li>Cor: Verde</li>
+            <li><a href="pag_vendas.html" target="_blank" rel="noopener noreferrer">Comprar</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+    const totalImages = images.length;
+
+    document.querySelector('.next').addEventListener('click', () => {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % totalImages;
+        images[currentIndex].classList.add('active');
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        images[currentIndex].classList.add('active');
+    });
+</script>
+
+</body>
+</html>
